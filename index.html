@@ -76,6 +76,12 @@
     <a class="card" href="https://github.com/dimaggi-ai/compute-power-placement">
       <p class="t">Compute↔Power Placement</p>
       <p class="d">When does moving a job to cheaper power beat staying? Energy is ~3% of GPU-hour cost — so schedule against scarcity, don't arbitrage the spread. A fleet model shows the saving concentrates: ~72% of it comes from the top-1% of price hours.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/edge-continuum-placement">
+      <p class="t">Edge↔Neocloud Placement <span class="tag">pip</span></p>
+      <p class="d">Where AI workloads belong on the operator's footprint — tower, hub, metro PoP, central factory. The tower is never the recommended tier; latency is the weakest edge argument; fronthaul (~20 km), data gravity, and sovereignty do the actual forcing.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/airan-neocloud-resiliency">
+      <p class="t">AI-RAN ↔ Neocloud Resiliency <span class="tag">pip</span></p>
+      <p class="d">The last mile priced in nines: a single-fiber edge site is a ~2.7-nines site; multi-transport bonding helps only the tenant classes; the generator — not a third link — buys the decisive nine.</p></a>
   </div>
 
   <h2>Tools you can install</h2>
@@ -83,13 +89,27 @@
   <div class="tools">
     <div>
       <p class="d" style="margin:0 0 8px"><b>Chaos-fidelity linter</b> — reject a wrong-layer chaos experiment:</p>
-      <pre>pip install git+https://github.com/\ndimaggi-ai/ai-cluster-chaos-fidelity
+      <pre>pip install git+https://github.com/\
+dimaggi-ai/ai-cluster-chaos-fidelity
 chaos-fidelity my-experiment.yaml</pre>
     </div>
     <div>
       <p class="d" style="margin:0 0 8px"><b>Autonomy promotion gate</b> — refuse an unearned autonomy promotion:</p>
-      <pre>pip install git+https://github.com/\ndimaggi-ai/governed-autonomy
+      <pre>pip install git+https://github.com/\
+dimaggi-ai/governed-autonomy
 promotion-gate my-record.yaml</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Placement gate</b> — block an edgeward placement no gate forces:</p>
+      <pre>pip install git+https://github.com/\
+dimaggi-ai/edge-continuum-placement
+edge-placement evaluate -w frontier-training -t tower  # exit 1</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Resilience ladder</b> — price the next nine before buying it:</p>
+      <pre>pip install git+https://github.com/\
+dimaggi-ai/airan-neocloud-resiliency
+airan-resiliency ladder</pre>
     </div>
   </div>
 
