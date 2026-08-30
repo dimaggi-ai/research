@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIMAGGI AI — Infrastructure Research</title>
+<meta name="description" content="Open, reproducible research on turning GPU capital into usable compute: networking, scheduling, reliability, placement, chaos-fidelity, and governed autonomy.">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1f2b; --muted:#5b6472; --line:#e5e8ee;
+    --card:#f7f8fa; --accent:#2c5cc5; --accent-soft:#eaf0fb; --code:#0f1420; --codefg:#e6edf3;
+  }
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --bg:#0f1216; --fg:#e8ecf2; --muted:#9aa4b2; --line:#232a33;
+    --card:#161b22; --accent:#7aa2f7; --accent-soft:#182234; --code:#0b0e13; --codefg:#e6edf3;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0f1216; --fg:#e8ecf2; --muted:#9aa4b2; --line:#232a33;
+    --card:#161b22; --accent:#7aa2f7; --accent-soft:#182234; --code:#0b0e13; --codefg:#e6edf3;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:56px 22px 80px}
+  header p.kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0 0 10px}
+  h1{font-size:2.05rem;line-height:1.2;margin:0 0 14px;letter-spacing:-.02em}
+  .lede{font-size:1.14rem;color:var(--muted);max-width:70ch;margin:0 0 8px}
+  .eq{display:inline-block;background:var(--accent-soft);color:var(--fg);border:1px solid var(--line);
+    border-radius:8px;padding:8px 12px;margin:22px 0 6px;font-size:.98rem}
+  .eq b{color:var(--accent)}
+  h2{font-size:1.25rem;margin:44px 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--muted);margin:0 0 20px;font-size:.97rem}
+  .grid{display:grid;gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;
+    text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .15s}
+  .card:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .card .t{font-weight:650;font-size:1.05rem;margin:0 0 4px}
+  .card .t .tag{font-weight:500;font-size:.72rem;color:var(--accent);background:var(--accent-soft);
+    border:1px solid var(--line);border-radius:20px;padding:2px 9px;margin-left:8px;vertical-align:middle}
+  .card .d{color:var(--muted);margin:0;font-size:.96rem}
+  pre{background:var(--code);color:var(--codefg);border-radius:10px;padding:14px 16px;overflow-x:auto;
+    font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .tools{display:grid;gap:14px;grid-template-columns:1fr}
+  @media(min-width:680px){.tools{grid-template-columns:1fr 1fr}}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">DIMAGGI AI · Infrastructure Research</p>
+    <h1>Turning GPU capital into usable compute</h1>
+    <p class="lede">An open, reproducible research program on the layers that decide how much of an AI cluster actually does useful work — and why fixing them usually beats buying more GPUs. Every result is seeded, tested, adversarially reviewed, and honest about what a skeptic should attack.</p>
+    <div class="eq">usable&nbsp;=&nbsp;nominal&nbsp;×&nbsp;<b>network</b>&nbsp;×&nbsp;<b>scheduling</b>&nbsp;×&nbsp;<b>recovery</b>&nbsp;×&nbsp;<b>placement</b>, under a governance layer</div>
+  </header>
+
+  <h2>The series</h2>
+  <p class="sub">Each repository isolates one factor, in the field's own metrics, with a runnable artifact.</p>
+  <div class="grid">
+    <a class="card" href="https://github.com/dimaggi-ai/network-vs-more-gpus">
+      <p class="t">GPU Cluster Networking</p>
+      <p class="d">Past a scale threshold, interconnect bandwidth — not GPU count — caps AI training throughput.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/scheduler-vs-more-gpus">
+      <p class="t">GPU Cluster Scheduling</p>
+      <p class="d">Reclaiming stranded capacity across Slurm, Kubernetes, and multi-cloud — allocation is where capacity is realized or lost.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/ai-cluster-chaos-fidelity">
+      <p class="t">Chaos Fidelity Standard <span class="tag">standard · pip</span></p>
+      <p class="d">A machine-checkable standard for which fault injection tests which layer. A pod kill is not an XID; tc/netem is not an InfiniBand flap.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/reliability-economics">
+      <p class="t">Reliability Economics</p>
+      <p class="d">Which recovery policy wins in which failure regime — a phase diagram in ETTR and dollars, validated against Meta's published reliability numbers.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/governed-autonomy">
+      <p class="t">Governed Autonomy <span class="tag">pip</span></p>
+      <p class="d">An autonomous control plane over clusters and networks: separated planes, a referee, an autonomy ladder earned by chaos experiments, and a sourced latency hierarchy from human intent to nanosecond in-ASIC reflexes.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/compute-power-placement">
+      <p class="t">Compute↔Power Placement</p>
+      <p class="d">When does moving a job to cheaper power beat staying? Energy is ~3% of GPU-hour cost — so schedule against scarcity, don't arbitrage the spread.</p></a>
+  </div>
+
+  <h2>Tools you can install</h2>
+  <p class="sub">The standards ship as commands, not just prose — run them in your own CI.</p>
+  <div class="tools">
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Chaos-fidelity linter</b> — reject a wrong-layer chaos experiment:</p>
+      <pre>pip install git+https://github.com/\ndimaggi-ai/ai-cluster-chaos-fidelity
+chaos-fidelity my-experiment.yaml</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Autonomy promotion gate</b> — refuse an unearned autonomy promotion:</p>
+      <pre>pip install git+https://github.com/\ndimaggi-ai/governed-autonomy
+promotion-gate my-record.yaml</pre>
+    </div>
+  </div>
+
+  <h2>The method</h2>
+  <p class="sub" style="max-width:72ch">Machine-checkable where possible; calibrated to primary sources and cross-checked against published fleet data; conditional claims with a stated "what a skeptic should attack"; and each result adversarially reviewed before release. The goal is not a slogan but a body of work an engineer can run and a reviewer can trust.</p>
+
+  <footer>
+    Margaret (Maggie) Nanyonga — Founder &amp; Principal Architect, DIMAGGI AI ·
+    <a href="https://dimaggi.ai">dimaggi.ai</a> ·
+    <a href="https://github.com/dimaggi-ai">github.com/dimaggi-ai</a><br>
+    Governed AI infrastructure: the control, reliability, and audit layer for autonomous systems operating production networks and compute.
+  </footer>
+</div>
+</body>
+</html>
