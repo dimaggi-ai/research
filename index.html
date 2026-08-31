@@ -82,6 +82,9 @@
     <a class="card" href="https://github.com/dimaggi-ai/airan-neocloud-resiliency">
       <p class="t">AI-RAN ↔ Neocloud Resiliency <span class="tag">pip</span></p>
       <p class="d">The last mile priced in nines: a single-fiber edge site is a ~2.7-nines site; multi-transport bonding helps only the tenant classes; the generator — not a third link — buys the decisive nine.</p></a>
+    <a class="card" href="https://github.com/dimaggi-ai/cooling-pue-ladder">
+      <p class="t">Cooling &amp; the PUE Ladder <span class="tag">pip</span></p>
+      <p class="d">Heat out, priced in PUE, megawatts, and seconds: a 120 kW rack leaves only two rungs standing; a PUE point converts to ~1.9 MW of unqueued capacity per 10 MW feed; and one adoption mechanism reproduces the survey "plateau" and hyperscale ~1.1 fleets at once.</p></a>
   </div>
 
   <h2>Tools you can install</h2>
@@ -106,6 +109,11 @@ edge-placement evaluate -w frontier-pretrain -t tower  # exit 1</pre>
       <p class="d" style="margin:0 0 8px"><b>Resilience ladder</b> — price the next nine before buying it:</p>
       <pre>pip install airan-neocloud-resiliency
 airan-resiliency ladder</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Cooling density gate</b> — block a rack no rung can cool:</p>
+      <pre>pip install cooling-pue-ladder
+pue-ladder gate --density 120 --rung contained-air  # exit 1</pre>
     </div>
   </div>
 
