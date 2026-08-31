@@ -75,7 +75,7 @@
       <p class="d">An autonomous control plane over clusters and networks: separated planes, a referee, an autonomy ladder earned by chaos experiments, and a sourced latency hierarchy from human intent to nanosecond in-ASIC reflexes.</p></a>
     <a class="card" href="https://github.com/dimaggi-ai/compute-power-placement">
       <p class="t">Compute↔Power Placement</p>
-      <p class="d">When does moving a job to cheaper power beat staying? Energy is ~3% of GPU-hour cost — so schedule against scarcity, don't arbitrage the spread. A fleet model shows the saving concentrates: ~72% of it comes from the top-1% of price hours.</p></a>
+      <p class="d">When does moving a job to cheaper power beat staying? Energy is ~3% of GPU-hour cost — so schedule against scarcity, don't arbitrage the spread. A fleet model prices the scheduler against itself with its ranking removed: ranking the curtailment hours by price wins in every simulated price year, and the headline saving is bound by the assumed spike ceiling — 4.8% at $5,000/MWh, 2.7% at ERCOT's $2,000 real-time cap.</p></a>
     <a class="card" href="https://github.com/dimaggi-ai/edge-continuum-placement">
       <p class="t">Edge↔Neocloud Placement <span class="tag">pip</span></p>
       <p class="d">Where AI workloads belong on the operator's footprint — tower, hub, metro PoP, central factory. The tower is never the recommended tier; latency is the weakest edge argument; fronthaul (~20 km), data gravity, and sovereignty do the actual forcing.</p></a>
@@ -116,6 +116,10 @@ airan-resiliency ladder</pre>
 pue-ladder gate --density 120 --rung contained-air  # exit 1</pre>
     </div>
   </div>
+
+  <h2>How the claims are checked</h2>
+  <p class="sub" style="max-width:72ch">Every repository ships a validation program that CI runs on each push, and every finding is filed under one of three kinds, labeled in the output: <b>calibrated</b> — pinned to a published figure, where passing proves the model has not drifted from its citation, not that it predicts; <b>emergent</b> — results the model was not tuned to produce, required to survive independent reseeding; and <b>sanity</b> — properties of the model's own structure, citing no evidence and claiming none. The newer registries add two things: they print the anchors they do <i>not</i> provide, so an uncalibrated input cannot pass for a result, and their test suites break the model on purpose — delete a placement gate, delete the power chain, switch off the price spikes — and require the registry to go red.</p>
+  <p class="sub" style="max-width:72ch">That is not decoration. In the most recent pass it caught a generator threshold chosen after seeing the number (it failed on reseeding, and was replaced by an ordering with nothing to tune), a tie between transport options stated as a maximum rather than a mean (same fix), a latency registry that passed with three of its four gates deleted, and a concentration figure that was identical under every scheduling policy — a fact about the electricity market being reported as a result about the scheduler. Each was rewritten in public rather than quietly kept.</p>
 
   <h2>The method</h2>
   <p class="sub" style="max-width:72ch">Machine-checkable where possible; calibrated to primary sources and cross-checked against published fleet data; conditional claims with a stated "what a skeptic should attack"; and each result adversarially reviewed before release. The goal is not a slogan but a body of work an engineer can run and a reviewer can trust.</p>
