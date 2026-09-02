@@ -86,13 +86,13 @@
       <p class="t">Cooling &amp; the PUE Ladder <span class="tag">pip</span></p>
       <p class="d">Heat out, priced in PUE, megawatts, and seconds: a 120 kW rack leaves only two rungs standing; a PUE point converts to ~1.9 MW of unqueued capacity per 10 MW feed; and one adoption mechanism reproduces the survey "plateau" and hyperscale ~1.1 fleets at once.</p></a>
     <a class="card" href="https://github.com/dimaggi-ai/span-contract">
-      <p class="t">The Span Admission Contract <span class="tag">scale-across</span></p>
+      <p class="t">The Span Admission Contract <span class="tag">scale-across · pip</span></p>
       <p class="d">An admission contract for jobs that cross a hall boundary: probe &rarr; measurement &rarr; envelope &rarr; verdict, with synchronous training capped at the two tightest span classes. The verdict flips out of a measured delay, not a config knob &mdash; the same job admits at 40&nbsp;km and is refused at 400.</p></a>
     <a class="card" href="https://github.com/dimaggi-ai/optical-circuit-intent">
-      <p class="t">Optical Circuit Intent <span class="tag">scale-across</span></p>
+      <p class="t">Optical Circuit Intent <span class="tag">scale-across · pip</span></p>
       <p class="d">What to ask a reconfigurable optical plant for, and what it costs: vendor-neutral verbs, a retune legality ladder with an exact piecewise cost, a thermal-drift ledger, and failover that verifies the replacement circuit before tearing the old one down.</p></a>
     <a class="card" href="https://github.com/dimaggi-ai/slice-packer-torus">
-      <p class="t">Slice-Packing a Torus Pod <span class="tag">scale-across</span></p>
+      <p class="t">Slice-Packing a Torus Pod <span class="tag">scale-across · pip</span></p>
       <p class="d">The allocation layer of a torus pod &mdash; packing, cordon, re-embedding, tenancy, reconstitution &mdash; anchored by the series&rsquo; first fleet measurement: Titan&rsquo;s 30,207 GPUs (100,889 GPU-years). Ranking cohorts by hazard captures 55% of held-out deaths on a 30% budget, yet the eviction inequality says preemption pays only when a drain costs under ~3% of a rebuild: spend hazard estimates on placement, not eviction.</p></a>
   </div>
 
@@ -123,6 +123,21 @@ airan-resiliency ladder</pre>
       <p class="d" style="margin:0 0 8px"><b>Cooling density gate</b> — block a rack no rung can cool:</p>
       <pre>pip install cooling-pue-ladder
 pue-ladder gate --density 120 --rung contained-air  # exit 1</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Span admission contract</b> — refuse a cross-hall launch the facts don&rsquo;t support:</p>
+      <pre>pip install span-contract
+spancontract validate envelope.json</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Retune legality ladder</b> — when a circuit retune is invisible, and when it stalls the job:</p>
+      <pre>pip install optical-circuit-intent
+ocintent ladder</pre>
+    </div>
+    <div>
+      <p class="d" style="margin:0 0 8px"><b>Torus cordon pricer</b> — what one chip failure costs, by where it lands:</p>
+      <pre>pip install slice-packer-torus
+slicepacker cordon --shape 16,16,16</pre>
     </div>
   </div>
 
