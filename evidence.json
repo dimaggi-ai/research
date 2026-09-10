@@ -1,0 +1,178 @@
+{
+  "schema_version": "dimaggi-evidence/v1",
+  "coverage_scope": "Consequential headline claims, governing assumptions and model limits. Not a catalog of helper constants or proof that citations are correct.",
+  "sources": {
+    "integration/usable_capacity.py": {
+      "source_type": "model-assumption",
+      "location": "integration/usable_capacity.py",
+      "version_date": "2026-09-10 closure working tree; SHA-256 bound below",
+      "license_or_reuse": "Repository-authored analysis; third-party facts referenced, no new external raw data redistributed",
+      "scope": "Local authoritative definition or claim. External provenance retained in SOURCES/REFERENCES and inline citations; scenario choices are not empirical measurements."
+    },
+    "integration/scenario_matrix.py": {
+      "source_type": "model-assumption",
+      "location": "integration/scenario_matrix.py",
+      "version_date": "2026-09-10 closure working tree; SHA-256 bound below",
+      "license_or_reuse": "Repository-authored analysis; third-party facts referenced, no new external raw data redistributed",
+      "scope": "Local authoritative definition or claim. External provenance retained in SOURCES/REFERENCES and inline citations; scenario choices are not empirical measurements."
+    },
+    "integration/scenario-matrix.json": {
+      "source_type": "experiment-output",
+      "location": "integration/scenario-matrix.json",
+      "version_date": "2026-09-10 closure working tree; SHA-256 bound below",
+      "license_or_reuse": "Repository-authored analysis; third-party facts referenced, no new external raw data redistributed",
+      "scope": "Local authoritative definition or claim. External provenance retained in SOURCES/REFERENCES and inline citations; scenario choices are not empirical measurements."
+    },
+    "integration/README.md": {
+      "source_type": "model-assumption",
+      "location": "integration/README.md",
+      "version_date": "2026-09-10 closure working tree; SHA-256 bound below",
+      "license_or_reuse": "Repository-authored analysis; third-party facts referenced, no new external raw data redistributed",
+      "scope": "Local authoritative definition or claim. External provenance retained in SOURCES/REFERENCES and inline citations; scenario choices are not empirical measurements."
+    }
+  },
+  "inputs": [
+    {
+      "name": "per-rack power",
+      "unit": "kW",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/usable_capacity.py"
+      ],
+      "transformation": "64 GPUs/rack at1.275kW system power each; not measured draw",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 81.6,
+      "valid_bounds": [
+        0,
+        8159.999999999999
+      ]
+    },
+    {
+      "name": "nominal fabric",
+      "unit": "GPUs",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/scenario_matrix.py"
+      ],
+      "transformation": "Six predefined contrasting shape/power/workload/failure cases",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 512,
+      "valid_bounds": [
+        0,
+        51200
+      ]
+    },
+    {
+      "name": "horizon",
+      "unit": "hours",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/usable_capacity.py"
+      ],
+      "transformation": "Static-window experiment",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 720,
+      "valid_bounds": [
+        0,
+        72000
+      ]
+    },
+    {
+      "name": "power intervention",
+      "unit": "MW",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/scenario_matrix.py"
+      ],
+      "transformation": "No price or lead-time model",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 1.5,
+      "valid_bounds": [
+        0,
+        150
+      ]
+    },
+    {
+      "name": "network intervention",
+      "unit": "fraction",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/scenario_matrix.py"
+      ],
+      "transformation": "Synthetic healthy network efficiency",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 0.95,
+      "valid_bounds": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "recovery intervention",
+      "unit": "hours",
+      "evidence_class": "scenario",
+      "sources": [
+        "integration/scenario_matrix.py"
+      ],
+      "transformation": "Faster reload assumption",
+      "uncertainty": "Deliberately hypothetical/operator policy; not an observed universal bound",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "value": 0.05,
+      "valid_bounds": [
+        0,
+        5
+      ]
+    }
+  ],
+  "results": [
+    {
+      "name": "constraint interactions",
+      "unit": "claim",
+      "evidence_class": "simulated",
+      "sources": [
+        "integration/scenario-matrix.json"
+      ],
+      "transformation": "Six predefined scenarios and all pair interventions; recovered GPU-hour ranking, not universal investment ranking",
+      "uncertainty": "Conditional model result; not production outcome or empirical confidence interval",
+      "affected_outputs": [
+        "published conclusion"
+      ],
+      "statement": "Six predefined scenarios and all pair interventions; recovered GPU-hour ranking, not universal investment ranking"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "integration/usable_capacity.py",
+      "sha256": "4606561a62d8ab0fa7d5bf9ac1af969799d0921023ceacacdffceafacd08a112"
+    },
+    {
+      "path": "integration/scenario_matrix.py",
+      "sha256": "0591bb9c60feecdf5d0f5c01d040b0c26b2d96527df7541bec23eae1398b6b2e"
+    },
+    {
+      "path": "integration/scenario-matrix.json",
+      "sha256": "ca64eca5a7776771d65eef34005fdd7453a59c2567e1a12ef60deefa3ffd634e"
+    },
+    {
+      "path": "integration/README.md",
+      "sha256": "f099343303af5cc9ebb4c06d0b6d6249d1443384dd4bde1ee10c547b2659e01d"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Generated local verification caches are not research artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
