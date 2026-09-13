@@ -20,7 +20,7 @@ Each repository has one primary classification; a supporting role does not imply
 | [edge-continuum-placement](https://github.com/dimaggi-ai/edge-continuum-placement) | Supporting infrastructure model | `continuum/place.py`, `physics.py`, `fleet.py`: fabric/power/latency/gravity gates and discrete site capacity. Siting engine, not per-request inference routing. |
 | [cooling-pue-ladder](https://github.com/dimaggi-ai/cooling-pue-ladder) | Supporting infrastructure model | `cooling/capacity.py`, `admission.py`: feed/PUE capacity, rack density, thermal ride-through, hall headroom and feeder-step admission. Physical feasibility must not be replaced by a generic scheduler power percentage. |
 | [optical-circuit-intent](https://github.com/dimaggi-ai/optical-circuit-intent) | Supporting infrastructure model | `src/ocintent/radix.py`, `drift.py`, `hedge.py`, `adapters/tapi.py`: port allocation, retune/checkpoint costs, optical drift and measured-data analysis; TAPI plans are rendered, not sent. Optical precursors are not NCCL causality. |
-| [research](https://github.com/dimaggi-ai/research) | Portfolio/index | `README.md` and `index.html` aggregate research. Put ownership/interface navigation here, not runtime engines. |
+| [usable-compute](https://github.com/dimaggi-ai/usable-compute) | Portfolio/index | `README.md` and `index.html` aggregate research. Put ownership/interface navigation here, not runtime engines. |
 
 Two additional private infrastructure repositories were assessed in a separate local appendix. Their implementation and licensing do not become public dependencies or source material through this report.
 
@@ -65,7 +65,7 @@ The implemented increment adds scheduler replay/reporting and geometry/admission
 previews, plus normalized offline collective comparison in netcap. It does not
 complete the deferred live capabilities listed above. No new repository was created.
 
-- [research @ 009cbf39f0d4](https://github.com/dimaggi-ai/research/tree/009cbf39f0d4ba2f04909328577cd1718b1d904b)
+- [usable-compute @ 009cbf39f0d4](https://github.com/dimaggi-ai/usable-compute/tree/009cbf39f0d4ba2f04909328577cd1718b1d904b)
 - [scheduler-vs-more-gpus @ dd4f012f0501](https://github.com/dimaggi-ai/scheduler-vs-more-gpus/tree/dd4f012f0501f4f7cda951b7dc35d3c125342168)
 - [network-vs-more-gpus @ 462dfd981cbe](https://github.com/dimaggi-ai/network-vs-more-gpus/tree/462dfd981cbe341d1ddb094767dbf1728446cc9b)
 - [reliability-economics @ 0989c6ef1fb8](https://github.com/dimaggi-ai/reliability-economics/tree/0989c6ef1fb896ffcbfe0ab50d308b77a79c1d51)

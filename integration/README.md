@@ -1,6 +1,6 @@
 # Joined usable-capacity experiment
 
-Run from the research repository with the sibling repositories present:
+Run from the usable-compute repository with the sibling repositories present:
 
 ```
 python integration/usable_capacity.py
@@ -32,7 +32,7 @@ universal multiplicative capacity identity. Do not generalize the ranking
 beyond the counterexample. Broader trace-driven integration remains necessary.
 # Closure scenario matrix
 
-From the research repository root, with the same sibling repositories and
+From the usable-compute repository root, with the same sibling repositories and
 dependencies as the original joined experiment:
 
 ```sh
