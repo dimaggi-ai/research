@@ -7,9 +7,12 @@ on one project-specific idea, with no headline, logo or decorative neon effects.
 The collection below is an artwork index, not a source of portfolio membership.
 Use [the portfolio workflow](PORTFOLIO.md) for the current authoritative set.
 
-**GitHub activation is a separate step:** open each linked Settings page, then
-**Social preview → Edit → Upload an image** and upload the GitHub JPEG.
-The images are stored in the repositories; storing them does not activate link previews.
+**Active on all 13 repositories as of 2026-09-13.** Each GitHub social-preview
+image was uploaded and verified to match its prepared JPEG byte for byte.
+
+To replace a preview later, open the linked Settings page, then
+**Social preview → Edit → Upload an image**. Updating a file in Git alone does
+not replace the configured social-preview image.
 
 | Repository | Cover | Files and settings |
 | --- | --- | --- |
@@ -35,7 +38,8 @@ prompts are retained in each repository under `assets/covers/`.
 
 The Usable Compute portfolio website references its own cover in its Open Graph
 metadata. Other website articles can reuse the relevant LinkedIn export through
-their own metadata. Repository previews still require the GitHub upload above.
+their own metadata. All repository previews in this collection are configured;
+future replacements require the GitHub upload described above.
 
 After activation, check the exact URL with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
 and check the Featured card before saving it. Existing cards may retain cached images.
