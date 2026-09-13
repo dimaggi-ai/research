@@ -8,6 +8,9 @@ scheduling, networking, reliability, power, cooling, placement, and governed ope
 See the [Infrastructure Intelligence portfolio assessment](INFRASTRUCTURE_INTELLIGENCE.md)
 for implementation ownership, capability mapping and explicit integration boundaries.
 
+For collective reviews, use the [portfolio workflow](PORTFOLIO.md) to discover
+membership from GitHub custom properties and capture the exact commits to analyze.
+
 This repository is the entry point to DIMAGGI AI's open, reproducible infrastructure
 portfolio. Served via GitHub Pages; it indexes the series and installable standards.
 Source: `index.html`.
