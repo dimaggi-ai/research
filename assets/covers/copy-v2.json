@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "usable-compute",
+    "label": "AI INFRASTRUCTURE RESEARCH",
+    "title": [
+      "Usable",
+      "Compute"
+    ],
+    "subtitle": [
+      "AI infrastructure models,",
+      "standards, and decision frameworks."
+    ],
+    "fontSize": 84,
+    "background": "illustration-v2.png",
+    "output": ".",
+    "source_readme_commit": "f34e9745b080662994594dbac8fa1f0163d1b4fc"
+  }
+]

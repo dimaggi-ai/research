@@ -19,3 +19,6 @@ Live: https://dimaggi-ai.github.io/usable-compute/
 
 [Cover artwork](COVER_ARTWORK.md): visual index, download links and sharing-image setup
 for the public portfolio.
+
+[Cover strategy](COVER_STRATEGY.md): clear research copy, restrained illustrations,
+and proofreading checks.
