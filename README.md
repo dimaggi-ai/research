@@ -16,3 +16,6 @@ portfolio. Served via GitHub Pages; it indexes the series and installable standa
 Source: `index.html`.
 
 Live: https://dimaggi-ai.github.io/usable-compute/
+
+[Cover artwork](COVER_ARTWORK.md): visual index, download links and sharing-image setup
+for the public portfolio.
